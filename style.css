@@ -1,0 +1,356 @@
+:root {
+    --primary-color: #fcbb5a;
+    --glow-color: #ff5031;
+}
+
+section * {
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    background: #333;
+    padding: 2em;
+    font-family: sans-serif;
+}
+
+section {
+    margin: 2em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*======== Button ==========*/
+.btn {
+    background: linear-gradient(0deg, #303034 0%, #424141 100%);
+    box-shadow: inset 0 1px 1px #696969, 0 5px 10px #040404;
+    padding: 1em;
+    position: relative;
+    color: #eee;
+    margin: 1em;
+}
+
+.btn i {
+    font-size: 2.7em;
+}
+
+.btn::before {
+    content: "";
+    background: #040404;
+    width: 104%;
+    height: 104%;
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.btn-pressed {
+    background: #333;
+    box-shadow: inset 0 1px 1px #696969;
+}
+
+.btn-pressed::before {
+    box-shadow: 0 1px 1px #696969;
+    width: 106%;
+    height: 106%;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.btn-rounded {
+    border-radius: 1em;
+}
+
+.text-inset {
+    text-shadow: 0 1px 1px #696969, 0 -1px 1px #0e0e0e;
+    color: #1c1c1c;
+}
+
+.btn-pressed,
+.btn-pressed .text-inset {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.btn-group {
+    margin: 1em;
+}
+
+.btn-group .btn {
+    margin: 0;
+}
+
+.btn-group .btn:first-child {
+    border-radius: 1em 0 0 1em;
+}
+
+.btn-group .btn:last-child {
+    border-radius: 0 1em 1em 0;
+}
+
+/*=========== knob ============*/
+.knob-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding: 3em;
+    width: 10em;
+    height: 10em;
+}
+
+.knob-container::before {
+    background: linear-gradient(0deg, #525252 0%, #373737 100%);
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 -20px 20px #757575, 0 20px 35px #111,
+    inset 0 5px 6px #979797, 0 -5px 6px #242424;
+}
+
+.knob-container::before,
+.knob {
+    width: 10em;
+    height: 10em;
+    position: relative;
+}
+
+.knob::before,
+.knob::after,
+.knob-container::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.knob::before {
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 5px;
+    height: 30px;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.knob::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid var(--primary-color);
+    width: 130%;
+    height: 130%;
+    box-shadow: 0 0 10px var(--primary-color),
+    inset 0 0 10px var(--primary-color);
+}
+
+/*=========== Clock ============*/
+.clock {
+    margin: 1em;
+    background: #1c1c1c;
+    color: var(--primary-color);
+    width: 12em;
+    height: 12em;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 5px 10px #040404;
+}
+
+.time {
+    font-size: 2em;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.clock::after,
+.clock::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: inherit;
+ }
+
+.clock::before {
+    background: linear-gradient(0deg, #303034 0%, #424141 100%);
+    width: 120%;
+    height: 120%;
+    box-shadow:
+        inset 0 1px 1px #696969, 0 5px 10px #040404;
+}
+
+.clock::after {
+    background: var(--primary-color);
+    width: 108%;
+    height: 108%;
+}
+
+ /*========= Checkbox ========*/
+.check {
+    position: relative;
+    margin: 1em;
+}
+
+.check::before,
+.check::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+}
+
+.check::before {
+    content: "";
+    box-shadow:
+        inset 0 5px 5px #0e0e0e,
+        inset 0 -1px 3px #696969;
+    background: #1c1c1c;
+    width: 2em;
+    height: 2em;
+    border-radius: 4px;
+}
+
+.check::after {
+    font-family: FontAwesome, serif;
+    color: #eee;
+    content: "\f00c";
+    z-index: 1;
+    opacity: 0;
+    transition: .2s;
+}
+
+.check-shine::after {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.check:checked:after {
+    opacity: 1;
+}
+
+/*======= Radio ========*/
+.radio {
+    position: relative;
+    margin: 1em;
+}
+
+.radio::before,
+.radio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.radio::before {
+    box-shadow: 
+        inset 0 5px 5px #0e0e0e,
+        inset 0 -1px 3px #696969;
+    background: #1c1c1c;
+    width: 2em;
+    height: 2em;
+}
+
+.radio::after {
+    width: 0.7em;
+    height: 0.7em;
+    background: #eee;
+    z-index: 1;
+    opacity: 0;
+    transition: .2s;
+}
+
+.radio-shine::after {
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.radio:checked::after {
+    opacity: 1;
+}
+
+/*======== Toggle ========*/
+.toggle {
+    position: relative;
+    margin: 4em;
+}
+
+.toggle::before,
+.toggle::after {
+    position: absolute;
+    content: "";
+    width: 6em;
+    height: 2em;
+}
+
+.toggle::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow:
+        inset 0 5px 5px #0e0e0e,
+        inset 0 -1px 3px #696969;
+    background: #1c1c1c;
+    width: 6em;
+    height: 2em;
+    border-radius: 2em;
+}
+
+.toggle::after {
+    background: linear-gradient( 0deg, #303034 0%, #424141 100%);
+    box-shadow:
+        inset 0 1px 1px #696969, 0 5px 10px #040404;
+    font-family: Font Awesome, Serif;
+    content: "\f111";
+    width: 2.3em;
+    height: 2.3em;
+    z-index: 1;
+    transition: .2s;
+    border-radius: 50%;
+    text-shadow: 0 1px 1px #696969, 0 -1px 1px #0e0e0e;
+    color: #1c1c1c;
+    left: -2.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle:checked:after {
+    color: #eee;
+    left: 1.8em;
+    text-shadow: none;
+}
+
+.toggle-shine:checked:after {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+/*======= Range Slider ========*/
+.range-slider {
+
+}
