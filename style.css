@@ -317,7 +317,7 @@ a {
 .toggle::after {
     background: linear-gradient(0deg, #303034 0%, #424141 100%);
     box-shadow: inset 0 1px 1px #696969, 0 5px 10px #040404;
-    font-family: 'FontAwesome';
+    font-family: FontAwesome, serif;
     content: "\f111";
     font-weight: normal;
     width: 2.3em;
@@ -342,7 +342,6 @@ a {
 }
 
 .toggle-shine:checked:after {
-
     color: var(--primary-color);
     text-shadow: 0 0 10px var(--glow-color);
 }
@@ -362,7 +361,7 @@ a {
     outline: none;
     border-radius: 3px;
     background: #1f1f1f;
-    box-shadow: inset 1px -1px #909090, inset 3px 3px 6px #000;
+    box-shadow: inset 1px -1px 1px #909090, inset 3px 3px 6px #000;
 }
 
 .range-slider .slider::-webkit-slider-thumb {
@@ -384,7 +383,7 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    box-shadow: inset 0 1px 2px #090909;
+    box-shadow: inset 0 1px 2px #909090;
 }
 
 .range-slider .slider-thumb::before {
@@ -430,7 +429,7 @@ a {
     border-top: 10px solid #090909;
     bottom: -0.5em;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
 }
 
 .range-slider .progress {
