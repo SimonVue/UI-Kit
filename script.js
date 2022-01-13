@@ -104,6 +104,8 @@ for (let i = 0; i < container.length; i++) {
   const progress = document.querySelector(".progress");
 
   function customSlider() {
+
+
     //Get the percentage
     const maxVal = slider.getAttribute("max");
     const val = (slider.value / maxVal) * 100 + "%";
